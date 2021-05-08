@@ -1,0 +1,32 @@
+.previousProjectsTitle {
+    display: inline;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+.previousProjectsCheckboxes {
+    font-size: 16px;
+    padding-left: 10px;
+    margin-top: 8px;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: black solid;
+    border-radius: 5px;
+}
+
+.previousProjectsCheckboxes::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.previousProjectsCheckboxes::-webkit-scrollbar-track {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.previousProjectsCheckboxes::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 20px;
+}
+.previousProjectsCheckboxes::-webkit-scrollbar-thumb:hover {
+    background: #007bff;
+}

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+body {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.debug {
+    border: solid black;
+}
+
+.title-head {
+    font-size: 40px;
+    padding-left: 50px;
+    height: 80px;
+    padding-top: 20px;
+}
+
+.dot {
+    color: #007bff;
+}
+
+.card-body {
+    margin-top: 2px;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+.card-header {
+    background-color: #f1f1f1;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+.card {
+    margin-bottom: 5px;
+}
+
+.title {
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9fa19f;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #007bff;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.passcodeText {
+    display: inline;
+    font-size: 18px;
+}
+
+.textField {
+    font-size: 18px;
+    display: inline;
+    border: black solid;
+}
+
+.clientNameText {
+    display: inline;
+    font-size: 18px;
+}
+
+.problemUnderText {
+    display: inline;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+.descriptionText {
+    display: inline;
+    font-size: 18px;
+}
+
+.submitButton {
+    font-size: 20px;
+    padding-left: 7px;
+    width: 85px;
+    height: 100vh;
+}
+
+.outputTitle {
+    font-size: 20px;
+}
+
+.outputTextArea {
+    border: solid black;
+    height: 600px;
+}
+
+
+
+
+
