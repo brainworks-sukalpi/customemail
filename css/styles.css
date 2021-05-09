@@ -135,7 +135,8 @@ input:checked + .slider:before {
 
 .outputTextArea {
     border: solid black;
-    height: 400px;
+    border-radius: 5px;
+    min-height: 500px;
 }
 
 
