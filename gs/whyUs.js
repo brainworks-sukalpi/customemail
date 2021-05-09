@@ -1,10 +1,10 @@
-// web app: https://script.google.com/macros/s/AKfycbySoZLsLRgriC8585SMQ_PH2tj6BW80H4EjAprV2jS997uJ24qOR36d5rlkAcJUNUTIjQ/exec
-//Opening 1
+//Web app: https://script.google.com/macros/s/AKfycby9t1C4xxfarCghkUqJ6udhuFjixfabBNCAXECK6GPO1pGyBiwSmJkNDYmHh66JibLnmg/exec
+//why us 1
 
 function doGet() {
   
     const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const ws = ss.getSheetByName("Opening");
+    const ws = ss.getSheetByName("Why Us");
     const data = ws.getRange("A1").getDataRegion().getValues();
     const headers = data.shift();
   
