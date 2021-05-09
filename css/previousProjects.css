@@ -1,10 +1,10 @@
-.qualificationTitle {
+.previousProjectsTitle {
     display: inline;
-    font-size: 20px;
+    font-size: 17px;
     padding-left: 0px;
 }
 
-.qualificationRadio {
+.previousProjectsCheckboxes {
     font-size: 16px;
     padding-left: 10px;
     margin-top: 8px;
@@ -15,23 +15,18 @@
     border-radius: 5px;
 }
 
-.qualificationRadio::-webkit-scrollbar {
+.previousProjectsCheckboxes::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
-.qualificationRadio::-webkit-scrollbar-track {
+.previousProjectsCheckboxes::-webkit-scrollbar-track {
     border: 1px solid black;
     border-radius: 20px;
 }
-.qualificationRadio::-webkit-scrollbar-thumb {
+.previousProjectsCheckboxes::-webkit-scrollbar-thumb {
     background: #007bff;
     border-radius: 20px;
 }
-.qualificationRadio::-webkit-scrollbar-thumb:hover {
+.previousProjectsCheckboxes::-webkit-scrollbar-thumb:hover {
     background: #007bff;
-}
-
-.qualificationInputText {
-    border: solid black;
-    margin-top: 10px;
 }

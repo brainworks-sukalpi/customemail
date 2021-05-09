@@ -1,10 +1,10 @@
-.whyusTitle {
+.closingTitle {
     display: inline;
-    font-size: 20px;
+    font-size: 17px;
     padding-left: 0px;
 }
 
-.whyusCheckboxes {
+.closingRadio {
     font-size: 16px;
     padding-left: 10px;
     margin-top: 8px;
@@ -15,19 +15,23 @@
     border-radius: 5px;
 }
 
-.whyusCheckboxes::-webkit-scrollbar {
+.closingRadio::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
-.whyusCheckboxes::-webkit-scrollbar-track {
+.closingRadio::-webkit-scrollbar-track {
     border: 1px solid black;
     border-radius: 20px;
 }
-.whyusCheckboxes::-webkit-scrollbar-thumb {
+.closingRadio::-webkit-scrollbar-thumb {
     background: #007bff;
     border-radius: 20px;
 }
-.whyusCheckboxes::-webkit-scrollbar-thumb:hover {
+.closingRadio::-webkit-scrollbar-thumb:hover {
     background: #007bff;
 }
 
+.closingInputText {
+    border: solid black;
+    margin-top: 10px;
+}
