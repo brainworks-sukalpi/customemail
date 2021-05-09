@@ -14,6 +14,7 @@ function assuranceOfDeliveryFunction(x) {
     input1.setAttribute("name","Delivery Assurance Texts");
     input1.setAttribute("id", "radio" + count1);
     input1.setAttribute("value", x);
+    input1.setAttribute("onclick", "assuranceText(id)");
     
     label1.setAttribute("class","form-check-label");
     label1.setAttribute("for","radio" + count1);
@@ -40,6 +41,7 @@ function hookExampleFunction(y) {
     input1.setAttribute("name","Hook Example Text");
     input1.setAttribute("id", "hookCheck" + count2);
     input1.setAttribute("value", y);
+    input1.setAttribute("onclick", "hookText(id)");
     
     label1.setAttribute("class","form-check-label");
     label1.setAttribute("for","hookCheck" + count2);
@@ -66,6 +68,7 @@ function qualificationFunction(y) {
     input1.setAttribute("name","Qualification Text");
     input1.setAttribute("id", "qualificationRadio" + count3);
     input1.setAttribute("value", y);
+    input1.setAttribute("onclick", "introSelfText(id)");
     
     label1.setAttribute("class","form-check-label");
     label1.setAttribute("for","qualificationRadio" + count3);
@@ -144,6 +147,7 @@ function closingFunction(y) {
     input1.setAttribute("name","Closing Text");
     input1.setAttribute("id", "closingRadio" + count6);
     input1.setAttribute("value", y);
+    input1.setAttribute("onclick", "closingText(id)");
     
     label1.setAttribute("class","form-check-label");
     label1.setAttribute("for","closingRadio" + count6);
@@ -235,6 +239,34 @@ async function closingData() {
                 closingFunction(d[0].data[i]["Closing Text"]);
             }
     });
+}
+
+function assuranceText(id) {
+    var textarea = document.getElementById("assuranceDeliveryInputTextArea");
+    var text = document.getElementById(id);
+
+    textarea.innerHTML = text.value;
+}
+
+function hookText(id) {
+    var textarea = document.getElementById("hookExampleInputTextArea");
+    var text = document.getElementById(id);
+
+    textarea.innerHTML += text.value;
+}
+
+function introSelfText(id) {
+    var textarea = document.getElementById("qualificationInputTextArea");
+    var text = document.getElementById(id);
+
+    textarea.innerHTML = text.value;
+}
+
+function closingText(id) {
+    var textarea = document.getElementById("closingInputTextArea");
+    var text = document.getElementById(id);
+
+    textarea.innerHTML = text.value;
 }
 
 $(document).ready(function() {
