@@ -144,7 +144,16 @@ input:checked + .slider:before {
     min-height: 500px;
 }
 
+.searchHook {
+    width: 97%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 
-
+.searchPrevProject {
+    width: 97%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 
 

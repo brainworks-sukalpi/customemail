@@ -218,6 +218,7 @@ async function whyUsData() {
     });
 }
 
+var prevProjectArray = [[]];
 async function projectData() {
 
     const url = "https://script.google.com/macros/s/AKfycbzlt-oNvLvEobvjZvYu9uQ8wv6GiFtWqc9zGlcpYbee4n3QoMy0pRa263MVE0KfWErDQw/exec";
@@ -226,14 +227,22 @@ async function projectData() {
         .then(d => {
 
             count5 = 0;
+            prevProjectArray = [];
             for(let i=0; i<d[0].data.length; i++)
             {
                 if(d[0].data[i]["Project Name"] !== "") {
                     prevProjectFunction(d[0].data[i]["Project Name"]);
                     hookExampleFunction(d[0].data[i]["Project Name"]);
-                }
-                    
+                
+                    var arr = [];
+                    arr.push(d[0].data[i]["Project Name"]);
+                    arr.push(d[0].data[i]["Link"]);
+
+                    prevProjectArray.push(arr);
+                }    
             }
+
+            console.log(prevProjectArray);
     });
 }
 
@@ -285,6 +294,58 @@ function closingText(id) {
     var str = text.value + "\n" + closingStatement;
     textarea.value = str;
     console.log(closingStatement);
+}
+
+function searchHookFunction() {
+    var input, filter, element, div;
+    input = document.getElementById("searchHookId");
+    filter = input.value.toUpperCase();
+
+    element = document.getElementById("hookExampleId");
+    div = element.getElementsByClassName("form-check")
+    // .getElementsByClassName("form-check-label");
+
+    let arr = [];
+    for(var i=0; i<div.length; i++) {
+        let temp = div[i].getElementsByTagName("input")[0];
+        arr.push(temp.value);
+    }
+
+    for(var i=0; i<arr.length; i++) {
+        var txtValue = arr[i];
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            div[i].style.display = "";
+        } else {
+            div[i].style.display = "none";
+        }
+    }
+}
+
+function searchPrevProjectFunction() {
+    var input, filter, element, div;
+    input = document.getElementById("searchProjectId");
+    filter = input.value.toUpperCase();
+
+    element = document.getElementById("previousProjectsId");
+    div = element.getElementsByClassName("form-check")
+    // .getElementsByClassName("form-check-label");
+
+    let arr = [];
+    for(var i=0; i<div.length; i++) {
+        let temp = div[i].getElementsByTagName("input")[0];
+        arr.push(temp.value);
+    }
+
+    for(var i=0; i<arr.length; i++) {
+        var txtValue = arr[i];
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            div[i].style.display = "";
+        } else {
+            div[i].style.display = "none";
+        }
+    }
 }
 
 $(document).ready(function() {
