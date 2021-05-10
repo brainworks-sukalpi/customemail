@@ -219,6 +219,7 @@ async function whyUsData() {
 }
 
 var prevProjectArray = [[]];
+var keywords = [];
 async function projectData() {
 
     const url = "https://script.google.com/macros/s/AKfycbzlt-oNvLvEobvjZvYu9uQ8wv6GiFtWqc9zGlcpYbee4n3QoMy0pRa263MVE0KfWErDQw/exec";
@@ -227,7 +228,7 @@ async function projectData() {
         .then(d => {
 
             count5 = 0;
-            prevProjectArray = [];
+            // prevProjectArray = [[]];
             for(let i=0; i<d[0].data.length; i++)
             {
                 if(d[0].data[i]["Project Name"] !== "") {
@@ -237,12 +238,12 @@ async function projectData() {
                     var arr = [];
                     arr.push(d[0].data[i]["Project Name"]);
                     arr.push(d[0].data[i]["Link"]);
+                    keywords.push(d[0].data[i]["Keywords"]);
 
                     prevProjectArray.push(arr);
                 }    
             }
-
-            console.log(prevProjectArray);
+            // console.log(keywords);
     });
 }
 
@@ -296,6 +297,31 @@ function closingText(id) {
     console.log(closingStatement);
 }
 
+var keywordsArray = [];
+function keywordArrayMaking() {
+
+    keywordsArray = [];
+
+    for(var i=0; i<keywords.length; i++) {
+        var temp = keywords[i];
+
+        var arr = [];
+        var flag = "";
+        for(var j=0; j<temp.length; j++) {
+            if(temp[j] !== ",") {
+                flag += temp[j];
+            } else {
+                arr.push(flag);
+                flag = "";
+            }
+        }
+
+        arr.push(flag);
+        keywordsArray.push(arr);
+    }
+    // console.log(keywordsArray);
+}
+
 function searchHookFunction() {
     var input, filter, element, div;
     input = document.getElementById("searchHookId");
@@ -315,9 +341,24 @@ function searchHookFunction() {
         var txtValue = arr[i];
 
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            div[i].style.display = "";
-        } else {
+            div[i].style.display = "block";
+        } 
+        else {
             div[i].style.display = "none";
+        }
+    }
+
+    keywordArrayMaking();
+    
+    for(var i=0; i<keywordsArray.length; i++) {
+        var txtValue = keywordsArray[i];
+
+        for(var j=0; j<txtValue.length; j++) {
+            var flag = txtValue[j];
+
+            if (flag.toUpperCase().indexOf(filter) > -1) {
+                div[i].style.display = "block";
+            }     
         }
     }
 }
@@ -346,6 +387,20 @@ function searchPrevProjectFunction() {
             div[i].style.display = "none";
         }
     }
+
+    keywordArrayMaking();
+    
+    for(var i=0; i<keywordsArray.length; i++) {
+        var txtValue = keywordsArray[i];
+
+        for(var j=0; j<txtValue.length; j++) {
+            var flag = txtValue[j];
+
+            if (flag.toUpperCase().indexOf(filter) > -1) {
+                div[i].style.display = "block";
+            }     
+        }
+    }
 }
 
 $(document).ready(function() {
@@ -354,5 +409,6 @@ $(document).ready(function() {
     whyUsData();
     projectData();
     closingData();
+    keywordArrayMaking();
 });
 
