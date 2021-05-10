@@ -415,6 +415,8 @@ function updateFunction() {
         openingText += "Hi ";
         if(document.getElementById("clientName").value !== "") {
             openingText += document.getElementById("clientName").value + ",";
+        } else {
+            openingText += "there,";
         }
         openingText += "\n";
         
@@ -519,6 +521,14 @@ function updateFunction() {
     }
     
     document.getElementById("outputTextAreaId").value = innerText;
+}
+
+function hookExampleToggleFunction() {
+    if(document.getElementById("hookExampleToggle").checked == true) {
+        document.getElementById("hookExampleInputTextArea").value = hookExampleText;
+    } else {
+        document.getElementById("hookExampleInputTextArea").value = "";
+    }
 }
 
 $(document).ready(function() {
