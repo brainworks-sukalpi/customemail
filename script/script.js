@@ -158,6 +158,7 @@ function closingFunction(y) {
     closing.appendChild(div1);
 }
 
+var hookExampleText = "";
 async function openingData() {
 
     const url = "https://script.google.com/macros/s/AKfycbySoZLsLRgriC8585SMQ_PH2tj6BW80H4EjAprV2jS997uJ24qOR36d5rlkAcJUNUTIjQ/exec"
@@ -170,14 +171,18 @@ async function openingData() {
 
             for(let i=0; i<d[0].data.length; i++)
             {
-                assuranceOfDeliveryFunction(d[0].data[i]["Delivery Assurance Texts"]);
+                if(d[0].data[i]["Delivery Assurance Texts"] !== "")
+                    assuranceOfDeliveryFunction(d[0].data[i]["Delivery Assurance Texts"]);
             }
 
-            for(let i=0; i<d[0].data.length; i++)
-            {
-                if(d[0].data[i]["Hook Example Text"] !== "")
-                    hookExampleFunction(d[0].data[i]["Hook Example Text"]);
-            }
+            hookExampleText = d[0].data[0]["Hook Example Text"];
+            // for(let i=0; i<d[0].data.length; i++)
+            // {
+            //     if(d[0].data[i]["Hook Example Text"] !== "")
+            //         hookExampleFunction(d[0].data[i]["Hook Example Text"]);
+            // }
+            // console.log(hookExampleText);
+            document.getElementById("hookExampleInputTextArea").value = hookExampleText;
     });
 }
 
@@ -191,7 +196,8 @@ async function introSelfData() {
             count3 = 0;
             for(let i=0; i<d[0].data.length; i++)
             {
-                qualificationFunction(d[0].data[i]["Qualification Text"]);
+                if(d[0].data[i]["Qualification Text"] !== "")
+                    qualificationFunction(d[0].data[i]["Qualification Text"]);
             }
     });
 }
@@ -206,7 +212,8 @@ async function whyUsData() {
             count4 = 0;
             for(let i=0; i<d[0].data.length; i++)
             {
-                whyUsFunction(d[0].data[i]["Why Us Reasons"]);
+                if(d[0].data[i]["Why Us Reasons"] !== "")
+                    whyUsFunction(d[0].data[i]["Why Us Reasons"]);
             }
     });
 }
@@ -221,11 +228,16 @@ async function projectData() {
             count5 = 0;
             for(let i=0; i<d[0].data.length; i++)
             {
-                prevProjectFunction(d[0].data[i]["Project Name"]);
+                if(d[0].data[i]["Project Name"] !== "") {
+                    prevProjectFunction(d[0].data[i]["Project Name"]);
+                    hookExampleFunction(d[0].data[i]["Project Name"]);
+                }
+                    
             }
     });
 }
 
+var closingStatement = "";
 async function closingData() {
 
     const url = "https://script.google.com/macros/s/AKfycbynA6KZy9ZJQ1oxT1yqc2HcodUQRkO7rokahr33xW3uvQSFtEUYWdABroScbiY5BztssA/exec";
@@ -236,8 +248,11 @@ async function closingData() {
             count6 = 0;
             for(let i=0; i<d[0].data.length; i++)
             {
-                closingFunction(d[0].data[i]["Closing Text"]);
+                if(d[0].data[i]["Portfolio Text"] !== "")
+                    closingFunction(d[0].data[i]["Portfolio Text"]);
             }
+
+            closingStatement = d[0].data[0]["Closing Text"];
     });
 }
 
@@ -245,28 +260,31 @@ function assuranceText(id) {
     var textarea = document.getElementById("assuranceDeliveryInputTextArea");
     var text = document.getElementById(id);
 
-    textarea.innerHTML = text.value;
+    textarea.value = text.value;
 }
 
 function hookText(id) {
     var textarea = document.getElementById("hookExampleInputTextArea");
     var text = document.getElementById(id);
 
-    textarea.innerHTML += text.value;
+    if(text.checked == true)
+        textarea.value += text.value + " ";
 }
 
 function introSelfText(id) {
     var textarea = document.getElementById("qualificationInputTextArea");
     var text = document.getElementById(id);
 
-    textarea.innerHTML = text.value;
+    textarea.value = text.value;
 }
 
 function closingText(id) {
     var textarea = document.getElementById("closingInputTextArea");
     var text = document.getElementById(id);
 
-    textarea.innerHTML = text.value;
+    var str = text.value + "\n" + closingStatement;
+    textarea.value = str;
+    console.log(closingStatement);
 }
 
 $(document).ready(function() {

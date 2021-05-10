@@ -7,6 +7,11 @@ body {
     border: solid black;
 }
 
+.pointerHead {
+    cursor: pointer;
+    padding-left: 5%;
+}
+
 .title-head {
     font-size: 40px;
     padding-left: 50px;

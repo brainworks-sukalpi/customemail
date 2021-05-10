@@ -32,7 +32,28 @@
 }
 
 .closingInputText {
-    border: solid black;
+    font-size: 16px;
+    padding-left: 10px;
     margin-top: 10px;
     height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: black solid;
+    border-radius: 5px;
+}
+
+.closingInputText::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.closingclosingInputTextRadio::-webkit-scrollbar-track {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.closingInputText::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 20px;
+}
+.closingInputText::-webkit-scrollbar-thumb:hover {
+    background: #007bff;
 }
