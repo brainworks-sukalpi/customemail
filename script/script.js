@@ -181,7 +181,6 @@ async function openingData() {
             //     if(d[0].data[i]["Hook Example Text"] !== "")
             //         hookExampleFunction(d[0].data[i]["Hook Example Text"]);
             // }
-            // console.log(hookExampleText);
             document.getElementById("hookExampleInputTextArea").value = hookExampleText;
     });
 }
@@ -218,7 +217,7 @@ async function whyUsData() {
     });
 }
 
-var prevProjectArray = [[]];
+var prevProjectArray = [];
 var keywords = [];
 async function projectData() {
 
@@ -228,7 +227,6 @@ async function projectData() {
         .then(d => {
 
             count5 = 0;
-            // prevProjectArray = [[]];
             for(let i=0; i<d[0].data.length; i++)
             {
                 if(d[0].data[i]["Project Name"] !== "") {
@@ -243,8 +241,9 @@ async function projectData() {
                     prevProjectArray.push(arr);
                 }    
             }
-            // console.log(keywords);
     });
+
+    keywordArrayMaking();
 }
 
 var closingStatement = "";
@@ -273,13 +272,13 @@ function assuranceText(id) {
     textarea.value = text.value;
 }
 
-function hookText(id) {
-    var textarea = document.getElementById("hookExampleInputTextArea");
-    var text = document.getElementById(id);
+// function hookText(id) {
+//     var textarea = document.getElementById("hookExampleInputTextArea");
+//     var text = document.getElementById(id);
 
-    if(text.checked == true)
-        textarea.value += text.value + " ";
-}
+//     if(text.checked == true)
+//         textarea.value += text.value + " ";
+// }
 
 function introSelfText(id) {
     var textarea = document.getElementById("qualificationInputTextArea");
@@ -329,8 +328,7 @@ function searchHookFunction() {
 
     element = document.getElementById("hookExampleId");
     div = element.getElementsByClassName("form-check")
-    // .getElementsByClassName("form-check-label");
-
+    
     let arr = [];
     for(var i=0; i<div.length; i++) {
         let temp = div[i].getElementsByTagName("input")[0];
@@ -348,7 +346,7 @@ function searchHookFunction() {
         }
     }
 
-    keywordArrayMaking();
+    // keywordArrayMaking();
     
     for(var i=0; i<keywordsArray.length; i++) {
         var txtValue = keywordsArray[i];
@@ -370,8 +368,7 @@ function searchPrevProjectFunction() {
 
     element = document.getElementById("previousProjectsId");
     div = element.getElementsByClassName("form-check")
-    // .getElementsByClassName("form-check-label");
-
+    
     let arr = [];
     for(var i=0; i<div.length; i++) {
         let temp = div[i].getElementsByTagName("input")[0];
@@ -388,7 +385,7 @@ function searchPrevProjectFunction() {
         }
     }
 
-    keywordArrayMaking();
+    // keywordArrayMaking();
     
     for(var i=0; i<keywordsArray.length; i++) {
         var txtValue = keywordsArray[i];
@@ -401,6 +398,127 @@ function searchPrevProjectFunction() {
             }     
         }
     }
+}
+
+function updateFunction() {
+    var innerText = "";
+    var openingText = "";
+    var introText = "";
+    var prevProjectsText = "";
+    var whyUsText = "";
+    var closingText = "";
+    
+    if(document.getElementById("openingToggle").checked == true) {
+        if(document.getElementById("passcode").value !== "") {
+            openingText += document.getElementById("passcode").value + "\n";
+        }
+        openingText += "Hi ";
+        if(document.getElementById("clientName").value !== "") {
+            openingText += document.getElementById("clientName").value + ",";
+        }
+        openingText += "\n";
+        
+        if(document.getElementById("problemUnderstanding").value !== "") {
+            openingText += "Greetings! Hope you're doing great. I have read through the project description and ";
+            openingText += document.getElementById("problemUnderstanding").value + " ";
+        }
+        
+        if(document.getElementById("assuranceDeliveryInputTextArea").value !== "") {
+            openingText += document.getElementById("assuranceDeliveryInputTextArea").value + " ";
+        }
+    
+        if(document.getElementById("hookExampleInputTextArea").value !== "") {
+            openingText += document.getElementById("hookExampleInputTextArea").value + " ";
+        }
+    
+        var element, div;
+        element = document.getElementById("hookExampleId");
+        div = element.getElementsByClassName("form-check")
+        
+        for(var i=0; i<div.length; i++) {
+            let temp = div[i].getElementsByTagName("input")[0];
+            if(temp.checked == true) {
+                openingText += prevProjectArray[i][0] + " ";
+                openingText += "(" + prevProjectArray[i][1] + "). ";
+            }
+        }
+
+        innerText += openingText;
+        innerText += "\n\n";
+    } else {
+        innerText += "";
+    }
+
+    if(document.getElementById("introToggle").checked == true) {
+        if(document.getElementById("qualificationInputTextArea").value !== "") {
+            introText += document.getElementById("qualificationInputTextArea").value;
+        }
+        introText += "\n\n";
+        innerText += introText;
+    } else {
+        innerText += "";
+    }
+
+    if(document.getElementById("projectToggle").checked == true) {
+        
+        prevProjectsText += "Here are some of the latest examples of my relevant projects:\n"    
+        var element, div;
+        element = document.getElementById("previousProjectsId");
+        div = element.getElementsByClassName("form-check")
+        
+        let countLine = 1;
+        for(var i=0; i<div.length; i++) {
+            let temp = div[i].getElementsByTagName("input")[0];
+            if(temp.checked == true) {
+                prevProjectsText += countLine;
+                prevProjectsText += ". ";
+                prevProjectsText += prevProjectArray[i][0] + ": ";
+                prevProjectsText += prevProjectArray[i][1] + "\n";
+                countLine++;
+            }
+        }
+
+        innerText += prevProjectsText;
+        innerText += "\n";
+    } else {
+        innerText += "";
+    }
+
+    if(document.getElementById("whyUsToggle").checked == true) {
+        
+        whyUsText += "Why must you hire me?\n"; 
+        var element, div;
+        
+        element = document.getElementById("whyUsId");
+        div = element.getElementsByClassName("form-check")
+        
+        let countLine = 1;
+        for(var i=0; i<div.length; i++) {
+            let temp = div[i].getElementsByTagName("input")[0];
+            if(temp.checked == true) {
+                whyUsText += countLine;
+                whyUsText += ". ";
+                whyUsText += temp.value + "\n";
+                countLine++;
+            }
+        }
+        innerText += whyUsText;
+        innerText += "\n";
+    } else {
+        innerText += "";
+    }
+
+    if(document.getElementById("closingToggle").checked == true) {
+        
+        if(document.getElementById("closingInputTextArea").value !== "") {
+            closingText += document.getElementById("closingInputTextArea").value;
+        }
+        innerText += closingText;
+    } else {
+        innerText += "";
+    }
+    
+    document.getElementById("outputTextAreaId").value = innerText;
 }
 
 $(document).ready(function() {

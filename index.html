@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-header d-flex" role="tab" id="openingHead">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="openingToggle" checked>
                                 <span class="slider round"></span>
                             </label>
                             <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#opening">
@@ -96,7 +96,7 @@
                     <div class="card">
                         <div class="card-header d-flex" role="tab" id="introHead">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="introToggle" checked>
                                 <span class="slider round"></span>
                             </label>
                             <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#intro">
@@ -123,7 +123,7 @@
                     <div class="card">
                         <div class="card-header d-flex" role="tab" id="previousProjectsHead">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="projectToggle" checked>
                                 <span class="slider round"></span>
                             </label>
                             <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#previousProjects">
@@ -157,7 +157,7 @@
                     <div class="card">
                         <div class="card-header d-flex" role="tab" id="whyusHead">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="whyUsToggle" checked>
                                 <span class="slider round"></span>
                             </label>
                             <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#whyus">
@@ -185,7 +185,7 @@
                     <div class="card">
                         <div class="card-header d-flex" role="tab" id="closingHead">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="closingToggle" checked>
                                 <span class="slider round"></span>
                             </label>
                             <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#closing">
@@ -205,7 +205,7 @@
                                         </label>
                                     </div> -->
                                 </div>
-                                <textarea class="form-control closingInputText" rows="5" placeholder="Closing Statement" id="closingInputTextArea"></textarea>
+                                <textarea class="form-control closingInputText" placeholder="Closing Statement" id="closingInputTextArea"></textarea>
                             </div>
                         </div>
                     </div>                
@@ -214,12 +214,12 @@
        </div>
     </div>
     <div class="">
-        <button onclick="func1()" type="button" class="btn submitButton" id="refresh">
+        <button onclick="updateFunction()" type="button" class="btn submitButton" id="update">
             Update
         </button>
     </div>
     <div class="col-4">
-        <textarea class="form-control outputTextArea" placeholder="Output Text Area" id=""></textarea>                         
+        <textarea class="form-control outputTextArea" placeholder="Output Text Area" id="outputTextAreaId"></textarea>                         
     </div>
     </div> 
     <!-- end  -->

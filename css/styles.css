@@ -141,7 +141,7 @@ input:checked + .slider:before {
 .outputTextArea {
     border: solid black;
     border-radius: 5px;
-    min-height: 500px;
+    min-height: 700px;
 }
 
 .searchHook {
