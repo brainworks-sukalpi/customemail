@@ -609,30 +609,32 @@ function handleClientLoad() {
 
 function updateSignInStatus(isSignedIn) {
     if (isSignedIn) {
-        document.getElementById("signin-button").style.visibility = "hidden";
-        document.getElementById("signout-button").style.display = "inline";
+        document.getElementById("signin-button").style.backgroundColor = "#f1f1f1";
+        document.getElementById("signin-button").style.borderColor = "black";
+        document.getElementById("signin-button").style.borderWidth = "2px";
+        document.getElementById("signin-button").style.color = "black";
+        document.getElementById("signin-button").innerHTML = "<b>Signed In</b>";
+        
         makeApiCallOpening();
         makeApiCallIntroSelf();
         makeApiCallPreviousProjects();
         makeApiCallWhyUs();
         makeApiCallClosing();
         makeApiCallPitchType();
-
-        document.getElementById("signin-button").style.visibility = "hidden";
-        document.getElementById("signout-button").style.visibility = "visible";
     }
 }
 
 function handleSignInClick(event) {
     gapi.auth2.getAuthInstance().signIn();
-    document.getElementById("signin-button").style.visibility = "hidden";
-    document.getElementById("signout-button").style.visibility = "visible";
+    document.getElementById("signin-button").style.backgroundColor = "#f1f1f1";
+    document.getElementById("signin-button").style.borderColor = "black";
+    document.getElementById("signin-button").style.borderWidth = "2px";
+    document.getElementById("signin-button").style.color = "black";
+    document.getElementById("signin-button").innerHTML = "<b>Signed In</b>";
 }
 
 function handleSignOutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
-    document.getElementById("signout-button").style.visibility = "hidden";
-    document.getElementById("signin-button").style.visibility = "visible";
 }
 
 var dealValue = "";

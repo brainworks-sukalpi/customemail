@@ -171,7 +171,7 @@ input:checked + .slider:before {
     color: white;
     display: inline;
     /* margin-right: 10px; */
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 100px;
 }
 
