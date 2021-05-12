@@ -13,10 +13,12 @@ body {
 }
 
 .title-head {
+    margin: 10px 0;
     font-size: 40px;
     padding-left: 50px;
     height: 80px;
     padding-top: 20px;
+    display: inline;
 }
 
 .dot {
@@ -129,7 +131,7 @@ input:checked + .slider:before {
     font-size: 16px;
 }
 
-.submitButton {
+.updateButton {
     font-size: 20px;
     padding-left: 7px;
     width: 85px;
@@ -156,4 +158,16 @@ input:checked + .slider:before {
     border-radius: 5px;
 }
 
+.signinButton {
+    background-color: #007bff;
+    color: white;
+    display: inline;
+    margin-left: 20%;
+}
 
+.signoutButton {
+    background-color: #007bff;
+    color: white;
+    display: inline;
+    margin-right: 10px;
+}
