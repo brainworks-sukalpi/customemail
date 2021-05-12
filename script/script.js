@@ -399,14 +399,12 @@ function makeApiCallPitchType() {
     request.then(function(response) {
     arr = response.result.values;
 
-    count6 = 0;
     for(var i=0; i<arr.length; i++) {
         if(arr[i] !== "") {
             pitchFunction(arr[i]);
             console.log(arr[i]);
         }
     }
-    closingStatement = arr[0][0];
     }, function(reason) {
     console.error('error: ' + reason.result.error.message);
     });
