@@ -654,6 +654,9 @@ $(document).ready(function() {
     // projectData();
     // closingData();
     // keywordArrayMaking();
+    $('#signout-button').click(function() {
+        location.reload();
+    });
 });
 
 function initClient() {
@@ -680,7 +683,7 @@ function updateSignInStatus(isSignedIn) {
 
     if (isSignedIn) {
         document.getElementById("signin-button").style.visibility = "hidden";
-        document.getElementById("signout-button").style.visibility = "show";
+        document.getElementById("signout-button").style.display = "inline";
         makeApiCallOpening();
         makeApiCallIntroSelf();
         makeApiCallPreviousProjects();
@@ -692,14 +695,15 @@ function updateSignInStatus(isSignedIn) {
 function handleSignInClick(event) {
     gapi.auth2.getAuthInstance().signIn();
     document.getElementById("signin-button").style.visibility = "hidden";
-    document.getElementById("signout-button").style.visibility = "show";
+    document.getElementById("signout-button").style.display = "inline";
 }
 
 function handleSignOutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
     document.getElementById("signout-button").style.visibility = "hidden";
-    document.getElementById("signin-button").style.visibility = "show";
+    document.getElementById("signin-button").style.display = "inline";
 }
+
 
 // function updateFunction1() {
 //     document.getElementById("hitesh").innerHTML = arr[0] + arr[1];
