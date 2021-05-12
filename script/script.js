@@ -381,6 +381,37 @@ function makeApiCallClosing() {
     });
 }
 
+function pitchFunction(x) {
+    var pitch = document.getElementById("exampleFormControlSelect1");
+    
+    var option = document.createElement("option");
+    option.innerHTML = x;
+    pitch.appendChild(option);
+}
+
+function makeApiCallPitchType() {
+    var params = {
+        spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M', 
+        range: 'Pitch Type!A2:Z',  
+    };
+
+    var request = gapi.client.sheets.spreadsheets.values.get(params);
+    request.then(function(response) {
+    arr = response.result.values;
+
+    count6 = 0;
+    for(var i=0; i<arr.length; i++) {
+        if(arr[i] !== "") {
+            pitchFunction(arr[i]);
+            console.log(arr[i]);
+        }
+    }
+    closingStatement = arr[0][0];
+    }, function(reason) {
+    console.error('error: ' + reason.result.error.message);
+    });
+}
+
 function assuranceText(id) {
     var textarea = document.getElementById("assuranceDeliveryInputTextArea");
     var text = document.getElementById(id);
@@ -660,8 +691,8 @@ $(document).ready(function() {
 });
 
 function initClient() {
-    var API_KEY = 'AIzaSyCyolaysIW45JucdDsnJpntGBrOIzNqy78';  
-    var CLIENT_ID = '852553931502-39ii9g32hqkiqnh23h8038npoh94b8a3.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+    var API_KEY = 'AIzaSyCWI2OD5Sc4KjRPi7S_JaIQIgZwUJsA5-A';  
+    var CLIENT_ID = '834429558732-j964hi5rjbicgeug1pat55t5e2qn6rdt.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
     var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
     gapi.client.init({
@@ -680,7 +711,6 @@ function handleClientLoad() {
 }
 
 function updateSignInStatus(isSignedIn) {
-
     if (isSignedIn) {
         document.getElementById("signin-button").style.visibility = "hidden";
         document.getElementById("signout-button").style.display = "inline";
@@ -689,21 +719,68 @@ function updateSignInStatus(isSignedIn) {
         makeApiCallPreviousProjects();
         makeApiCallWhyUs();
         makeApiCallClosing();
+        makeApiCallPitchType();
+
+        document.getElementById("signin-button").style.visibility = "hidden";
+        document.getElementById("signout-button").style.visibility = "visible";
     }
 }
 
 function handleSignInClick(event) {
     gapi.auth2.getAuthInstance().signIn();
     document.getElementById("signin-button").style.visibility = "hidden";
-    document.getElementById("signout-button").style.display = "inline";
+    document.getElementById("signout-button").style.visibility = "visible";
 }
 
 function handleSignOutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
     document.getElementById("signout-button").style.visibility = "hidden";
-    document.getElementById("signin-button").style.display = "inline";
+    document.getElementById("signin-button").style.visibility = "visible";
 }
 
+var dealValue = "";
+var pitchType = "";
+var pitchText = "";
+function submitFunction() {
+    dealValue = document.getElementById("dealValue").value;
+    pitchType = document.getElementById("exampleFormControlSelect1").value;
+    pitchText = document.getElementById("outputTextAreaId").value;
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+        dd='0'+dd;
+
+    if(mm<10) 
+        mm='0'+mm;
+        
+    var date = dd+'/'+mm+'/'+yyyy;
+
+    var params = {
+        spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M', 
+        range: 'Pitches!A2:Z',  
+        valueInputOption: "USER_ENTERED",
+    };
+
+    var valueRangeBody = {
+        "majorDimension": "ROWS",
+        "values": [
+            [date,
+            dealValue,
+            pitchType,
+            pitchText]
+        ]
+    };
+
+    var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+    request.then(function(response) {
+    console.log(response.result);
+    }, function(reason) {
+    console.error('error: ' + reason.result.error.message);
+    });
+}
 
 // function updateFunction1() {
 //     document.getElementById("hitesh").innerHTML = arr[0] + arr[1];
