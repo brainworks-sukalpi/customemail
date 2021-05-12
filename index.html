@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/opening.css">
     <link rel="stylesheet" href="css/introself.css">
     <link rel="stylesheet" href="css/previousProjects.css">
     <link rel="stylesheet" href="css/whyus.css">
     <link rel="stylesheet" href="css/closing.css">
-    <title>Sukalpi Brainworks.®</title>
+    <title>Document</title>
 </head>
 <body onload="handleClientLoad()">
     <div class="row mt-3">
@@ -43,25 +44,27 @@
                                 </a>
                             </h4>
                         </div>
-                        <div class="collapse" id="opening" data-parent="#accordion">
+                        <div class="collapse show" id="opening" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="passcode" class="col-2 col-form-label passcodeText">Passcode: </label>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control textField" placeholder="Passcode" id="passcode">
-                                    </div>   
-                                </div>
-                                <div class="form-group row">
-                                    <label for="clientName" class="col-2 col-form-label clientNameText">Client: </label>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control textField" placeholder="Client" id="clientName">
+                                    <div class="col-6 row ml-2">
+                                        <label for="passcode" class="col-form-label passcodeText">Passcode: </label>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control textField" placeholder="Passcode" id="passcode">
+                                        </div>
                                     </div>
+                                    <div class="col-6 row">
+                                        <label for="clientName" class="col-form-label clientNameText">Client: </label>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control textField" placeholder="Client" id="clientName">
+                                        </div>
+                                    </div> 
                                 </div>
                                 <hr>
                                 <label for="problemUnderstanding" class="col-12 col-form-label problemUnderText">PROBLEM UNDERSTANDING</label>
                                 <div class="form-group row">
                                     <p class="col-7 descriptionText col-form-label">I have read through the project description and </p>
-                                    <div class="col-5">
+                                    <div class="col-12">
                                         <input type="text" class="form-control textField" placeholder="" id="problemUnderstanding">
                                     </div>
                                 </div>
@@ -229,18 +232,18 @@
     </div>
     <div class="col-4">
         <form>
-            <div class="form-group row">
+            <div class="form-group d-flex">
                 <label for="dealValue" class="col-3 col-form-label dealText">Deal Value:</label>
-                <div class="col-4">
+                <div class="">
                     <input type="text" class="form-control textField" id="dealValue" name="Deal Value">
-                </div> 
+                </div>
+                <select class="form-control col-3 pitchOption" id="exampleFormControlSelect1">
+                    <!-- <option>1</option> -->
+                </select> 
                 <button type="button" class="btn btn-primary" id="saveButton" onclick="submitFunction(); highlight();">Save</button>  
             </div>
             <div class="form-group row">
-                <label for="exampleFormControlSelect1" class="col-3">Pitch Type:</label>
-                <select class="form-control col-4 ml-3 pitchOption" id="exampleFormControlSelect1">
-                  <!-- <option>1</option> -->
-                </select>
+                
               </div>
             <textarea class="form-control outputTextArea" placeholder="Output Text Area" id="outputTextAreaId" name="Pitch Content"></textarea>
         </form>  
