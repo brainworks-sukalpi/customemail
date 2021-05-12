@@ -160,28 +160,6 @@ function closingFunction(y) {
 
 var hookExampleText = "";
 var deliveryAssuranceTextArray = [];
-// function openingData() {
-
-//     count1 = 0;
-//     count2 = 0;
-//     for(let i=0; i<d[0].data.length; i++)
-//     {
-//         if(d[0].data[i]["Delivery Assurance Texts"] !== "")
-//             assuranceOfDeliveryFunction(d[0].data[i]["Delivery Assurance Texts"]);
-//     }
-//     for(let i=0; i<deliveryAssuranceTextArray.length; i++) {
-//         if(deliveryAssuranceTextArray[i] !== "")
-//             assuranceOfDeliveryFunction(deliveryAssuranceTextArray[i]);
-//             console.log(deliveryAssuranceTextArray[i]);
-//     }
-//     hookExampleText = d[0].data[0]["Hook Example Text"];
-//     for(let i=0; i<d[0].data.length; i++)
-//     {
-//         if(d[0].data[i]["Hook Example Text"] !== "")
-//             hookExampleFunction(d[0].data[i]["Hook Example Text"]);
-//     }
-// }
-
 function makeApiCallOpening() {
     var params = {
         spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M',
@@ -208,22 +186,6 @@ function makeApiCallOpening() {
     });
 }
 
-// async function introSelfData() {
-
-//     const url = "https://script.google.com/macros/s/AKfycbz7EYh194KTPdgHxq-QAGW3pklynE2XrwSuIxZjBwJ2NLY2n1PaCDaxHrZH3AwyMx4xQw/exec";
-//     await fetch(url)
-//         .then(d => d.json())
-//         .then(d => {
-
-//             count3 = 0;
-//             for(let i=0; i<d[0].data.length; i++)
-//             {
-//                 if(d[0].data[i]["Qualification Text"] !== "")
-//                     qualificationFunction(d[0].data[i]["Qualification Text"]);
-//             }
-//     });
-// }
-
 var qualificationTextArray = [];
 function makeApiCallIntroSelf() {
     var params = {
@@ -248,22 +210,6 @@ function makeApiCallIntroSelf() {
     });
 }
 
-// async function whyUsData() {
-
-//     const url = "https://script.google.com/macros/s/AKfycby9t1C4xxfarCghkUqJ6udhuFjixfabBNCAXECK6GPO1pGyBiwSmJkNDYmHh66JibLnmg/exec";
-//     await fetch(url)
-//         .then(d => d.json())
-//         .then(d => {
-
-//             count4 = 0;
-//             for(let i=0; i<d[0].data.length; i++)
-//             {
-//                 if(d[0].data[i]["Why Us Reasons"] !== "")
-//                     whyUsFunction(d[0].data[i]["Why Us Reasons"]);
-//             }
-//     });
-// }
-
 function makeApiCallWhyUs() {
     var params = {
         spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M',
@@ -286,29 +232,6 @@ function makeApiCallWhyUs() {
     console.error('error: ' + reason.result.error.message);
     });
 }
-
-// async function projectData() {
-
-//     const url = "https://script.google.com/macros/s/AKfycbzlt-oNvLvEobvjZvYu9uQ8wv6GiFtWqc9zGlcpYbee4n3QoMy0pRa263MVE0KfWErDQw/exec";
-//     await fetch(url)
-//         .then(d => d.json())
-//         .then(d => {
-//             count5 = 0;
-//             for(let i=0; i<d[0].data.length; i++)
-//             {
-//                 if(d[0].data[i]["Project Name"] !== "") {
-//                     prevProjectFunction(d[0].data[i]["Project Name"]);
-//                     hookExampleFunction(d[0].data[i]["Project Name"]);        
-//                     var arr = [];
-//                     arr.push(d[0].data[i]["Project Name"]);
-//                     arr.push(d[0].data[i]["Link"]);
-//                     keywords.push(d[0].data[i]["Keywords"]);
-//                     prevProjectArray.push(arr);
-//                 }    
-//             }
-//     });
-//     keywordArrayMaking();
-// }
 
 var prevProjectArray = [];
 var keywords = [];
@@ -340,24 +263,6 @@ function makeApiCallPreviousProjects() {
 }
 
 var closingStatement = "";
-// async function closingData() {
-
-//     const url = "https://script.google.com/macros/s/AKfycbynA6KZy9ZJQ1oxT1yqc2HcodUQRkO7rokahr33xW3uvQSFtEUYWdABroScbiY5BztssA/exec";
-//     await fetch(url)
-//         .then(d => d.json())
-//         .then(d => {
-
-//             count6 = 0;
-//             for(let i=0; i<d[0].data.length; i++)
-//             {
-//                 if(d[0].data[i]["Portfolio Text"] !== "")
-//                     closingFunction(d[0].data[i]["Portfolio Text"]);
-//             }
-
-//             closingStatement = d[0].data[0]["Closing Text"];
-//     });
-// }
-
 function makeApiCallClosing() {
     var params = {
         spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M', 
@@ -677,12 +582,6 @@ function hookExampleToggleFunction() {
 }
 
 $(document).ready(function() {
-    // openingData();
-    // introSelfData();
-    // whyUsData();
-    // projectData();
-    // closingData();
-    // keywordArrayMaking();
     $('#signout-button').click(function() {
         location.reload();
     });
@@ -690,7 +589,7 @@ $(document).ready(function() {
 
 function initClient() {
     var API_KEY = 'AIzaSyCyolaysIW45JucdDsnJpntGBrOIzNqy78';  
-    var CLIENT_ID = '852553931502-39ii9g32hqkiqnh23h8038npoh94b8a3.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+    var CLIENT_ID = '852553931502-39ii9g32hqkiqnh23h8038npoh94b8a3.apps.googleusercontent.com';
     var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
     gapi.client.init({
@@ -779,8 +678,4 @@ function submitFunction() {
     console.error('error: ' + reason.result.error.message);
     });
 }
-
-// function updateFunction1() {
-//     document.getElementById("hitesh").innerHTML = arr[0] + arr[1];
-// }
 
