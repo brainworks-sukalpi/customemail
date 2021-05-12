@@ -679,3 +679,15 @@ function submitFunction() {
     });
 }
 
+function highlight() {
+    obj = document.getElementById("saveButton");
+    obj.style.backgroundColor = "#f1f1f1";
+    obj.style.borderColor = "black";
+    obj.style.color = "black";
+    obj.innerHTML = "Saved";
+    setTimeout(function() {
+        obj.style.backgroundColor = "#007bff";
+        obj.innerHTML = "Save";
+        obj.style.color = "white";
+    }, 4000);
+}
