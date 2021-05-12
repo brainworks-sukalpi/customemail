@@ -691,8 +691,8 @@ $(document).ready(function() {
 });
 
 function initClient() {
-    var API_KEY = 'AIzaSyCWI2OD5Sc4KjRPi7S_JaIQIgZwUJsA5-A';  
-    var CLIENT_ID = '834429558732-j964hi5rjbicgeug1pat55t5e2qn6rdt.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+    var API_KEY = 'AIzaSyCyolaysIW45JucdDsnJpntGBrOIzNqy78';  
+    var CLIENT_ID = '852553931502-39ii9g32hqkiqnh23h8038npoh94b8a3.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
     var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
     gapi.client.init({
