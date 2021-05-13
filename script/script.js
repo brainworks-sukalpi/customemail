@@ -626,11 +626,6 @@ function updateSignInStatus(isSignedIn) {
 
 function handleSignInClick(event) {
     gapi.auth2.getAuthInstance().signIn();
-    document.getElementById("signin-button").style.backgroundColor = "#f1f1f1";
-    document.getElementById("signin-button").style.borderColor = "black";
-    document.getElementById("signin-button").style.borderWidth = "2px";
-    document.getElementById("signin-button").style.color = "black";
-    document.getElementById("signin-button").innerHTML = "<b>Signed In</b>";
 }
 
 function handleSignOutClick(event) {
