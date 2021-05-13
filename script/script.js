@@ -1,6 +1,7 @@
 let count1 = 0;
+// Fetched data from Opening sheet is displayed (radio) in Assurance of Delivery Box
 function assuranceOfDeliveryFunction(x) {
-    count1++;
+    count1++; // for giving each element unique Id
     var assurance = document.getElementById("assuranceOfDelivery");
     
     var div1 = document.createElement("div");
@@ -25,6 +26,7 @@ function assuranceOfDeliveryFunction(x) {
     assurance.appendChild(div1);
 }
 
+// Fetched data from Opening sheet is displayed in Hook Example Box
 let count2 = 0;
 function hookExampleFunction(y) {
     count2++;
@@ -52,6 +54,7 @@ function hookExampleFunction(y) {
     hook.appendChild(div1);
 }
 
+// Sheet data from Intro Self sheet is displayed in Qualification & Professional Experience Box
 let count3 = 0;
 function qualificationFunction(y) {
     count3++;
@@ -79,6 +82,7 @@ function qualificationFunction(y) {
     qualification.appendChild(div1);
 }
 
+//Data fetched is diplayed on why us box
 let count4 = 0;
 function whyUsFunction(y) {
     count4++;
@@ -105,6 +109,7 @@ function whyUsFunction(y) {
     whyUs.appendChild(div1);
 }
 
+//Same for previous projects
 let count5 = 0;
 function prevProjectFunction(y) {
     count5++;
@@ -131,6 +136,7 @@ function prevProjectFunction(y) {
     prevProject.appendChild(div1);
 }
 
+//same for closing section
 let count6 = 0;
 function closingFunction(y) {
     count6++;
@@ -158,6 +164,7 @@ function closingFunction(y) {
     closing.appendChild(div1);
 }
 
+//making an api call for "Opening" Sheet & Fetching data if user is an authorized user
 var hookExampleText = "";
 var deliveryAssuranceTextArray = [];
 function makeApiCallOpening() {
@@ -186,6 +193,7 @@ function makeApiCallOpening() {
     });
 }
 
+//making an api call for "Intro Self" Sheet & Fetching data if user is an authorized user
 var qualificationTextArray = [];
 function makeApiCallIntroSelf() {
     var params = {
@@ -210,6 +218,7 @@ function makeApiCallIntroSelf() {
     });
 }
 
+//making an api call for "Why Us" Sheet & Fetching data if user is an authorized user
 function makeApiCallWhyUs() {
     var params = {
         spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M',
@@ -233,6 +242,7 @@ function makeApiCallWhyUs() {
     });
 }
 
+//making an api call for "Previous Projects" Sheet & Fetching data if user is an authorized user
 var prevProjectArray = [];
 var keywords = [];
 function makeApiCallPreviousProjects() {
@@ -262,6 +272,7 @@ function makeApiCallPreviousProjects() {
     });
 }
 
+//making an api call for "Closing" Sheet & Fetching data if user is an authorized user
 var closingStatement = "";
 function makeApiCallClosing() {
     var params = {
@@ -286,6 +297,7 @@ function makeApiCallClosing() {
     });
 }
 
+//Fetched data is stored as options in "Pitch Type" Select Box
 function pitchFunction(x) {
     var pitch = document.getElementById("exampleFormControlSelect1");
     
@@ -294,6 +306,7 @@ function pitchFunction(x) {
     pitch.appendChild(option);
 }
 
+//making an api call to fetch data from pitch type sheet for authorized users
 function makeApiCallPitchType() {
     var params = {
         spreadsheetId: '1-i6XHA0iios-t0AKoN4riMC1dnBVZDVu-Y6RwmSLx2M', 
@@ -315,6 +328,7 @@ function makeApiCallPitchType() {
     });
 }
 
+//When clicked on assurance text radio buttons, it immediately gets diplayed in the text box
 function assuranceText(id) {
     var textarea = document.getElementById("assuranceDeliveryInputTextArea");
     var text = document.getElementById(id);
@@ -330,6 +344,8 @@ function assuranceText(id) {
 //         textarea.value += text.value + " ";
 // }
 
+
+//When clicked on intro self text radio buttons, it immediately gets diplayed in the text box
 function introSelfText(id) {
     var textarea = document.getElementById("qualificationInputTextArea");
     var text = document.getElementById(id);
@@ -337,6 +353,7 @@ function introSelfText(id) {
     textarea.value = text.value;
 }
 
+//When clicked on closing text radio buttons, it immediately gets diplayed in the text box
 function closingText(id) {
     var textarea = document.getElementById("closingInputTextArea");
     var text = document.getElementById(id);
@@ -346,6 +363,7 @@ function closingText(id) {
     console.log(closingStatement);
 }
 
+//Making a two dimensional array for all the keywords fetched from previous project to separate them
 var keywordsArray = [];
 function keywordArrayMaking() {
 
@@ -371,6 +389,7 @@ function keywordArrayMaking() {
     // console.log(keywordsArray);
 }
 
+//Search function to find appropriate text for hook example when user enters keywords or actual content of the text
 function searchHookFunction() {
     var input, filter, element, div;
     input = document.getElementById("searchHookId");
@@ -411,6 +430,7 @@ function searchHookFunction() {
     }
 }
 
+//same as above, but for previous projects section
 function searchPrevProjectFunction() {
     var input, filter, element, div;
     input = document.getElementById("searchProjectId");
@@ -450,6 +470,7 @@ function searchPrevProjectFunction() {
     }
 }
 
+//When update button is clicked, this function is run to update the content of the output text box
 function updateFunction() {
     var innerText = "";
     var openingText = "";
@@ -573,6 +594,7 @@ function updateFunction() {
     document.getElementById("outputTextAreaId").value = innerText;
 }
 
+//Toggle button for hook example default text to be included or not.
 function hookExampleToggleFunction() {
     if(document.getElementById("hookExampleToggle").checked == true) {
         document.getElementById("hookExampleInputTextArea").value = hookExampleText;
@@ -581,12 +603,14 @@ function hookExampleToggleFunction() {
     }
 }
 
+//When user sings out from the app, Page is refreshed
 $(document).ready(function() {
     $('#signout-button').click(function() {
         location.reload();
     });
 });
 
+//Sign in is processed using api key and client id
 function initClient() {
     var API_KEY = 'AIzaSyCyolaysIW45JucdDsnJpntGBrOIzNqy78';  
     var CLIENT_ID = '852553931502-39ii9g32hqkiqnh23h8038npoh94b8a3.apps.googleusercontent.com';
@@ -603,10 +627,12 @@ function initClient() {
     });
 }
 
+// when page is refreshed, this is function is run to check if user is already signed in or if the user have an authorization
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);
 }
 
+//Check if the user is singed in, if yes it updates the user's status as singed in, hence allowing user to use the app
 function updateSignInStatus(isSignedIn) {
     if (isSignedIn) {
         document.getElementById("signin-button").style.backgroundColor = "#f1f1f1";
@@ -624,14 +650,17 @@ function updateSignInStatus(isSignedIn) {
     }
 }
 
+//When sign in button is clicked, this function is run for the sign in process
 function handleSignInClick(event) {
     gapi.auth2.getAuthInstance().signIn();
 }
 
+//Sign out button is clicked, then this function is run for the sign out process
 function handleSignOutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
 }
 
+//This is a submit function for submitting the output text to the sheet with other details like date, pitch type etc. for authorized user only
 var dealValue = "";
 var pitchType = "";
 var pitchText = "";
@@ -676,6 +705,7 @@ function submitFunction() {
     });
 }
 
+//Save button is clicked, its state is changed for 4 seconds for user conformation
 function highlight() {
     obj = document.getElementById("saveButton");
     obj.style.backgroundColor = "#f1f1f1";

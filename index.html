@@ -26,229 +26,224 @@
     </div>
     <hr>
     <div class="d-flex"> 
-         <!-- starting -->
-    <div class="col-7">
-        <div class="row row-content align-items-center">
-            <div class="col-12">
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header d-flex" role="tab" id="openingHead">
-                            <label class="switch">
-                                <input type="checkbox" id="openingToggle" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#opening">
-                                <a class="title">
-                                    Opening
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="collapse" id="opening" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="form-group row">
-                                    <div class="col-6 row ml-2">
-                                        <label for="passcode" class="col-form-label passcodeText">Passcode: </label>
-                                        <div class="col-6">
-                                            <input type="text" class="form-control textField" placeholder="Passcode" id="passcode">
-                                        </div>
-                                    </div>
-                                    <div class="col-6 row">
-                                        <label for="clientName" class="col-form-label clientNameText">Client: </label>
-                                        <div class="col-6">
-                                            <input type="text" class="form-control textField" placeholder="Client" id="clientName">
-                                        </div>
-                                    </div> 
-                                </div>
-                                <hr>
-                                <label for="problemUnderstanding" class="col-12 col-form-label problemUnderText">PROBLEM UNDERSTANDING</label>
-                                <div class="form-group row">
-                                    <p class="col-7 descriptionText col-form-label">I have read through the project description and </p>
-                                    <div class="col-12">
-                                        <input type="text" class="form-control textField" placeholder="" id="problemUnderstanding">
-                                    </div>
-                                </div>
-                                
-                                <hr>
-                                <label for="assuranceDelivery" class="col-12 col-form-label assuranceDeliveryTitle">ASSURANCE OF DELIVERY</label>
-                                <div id="assuranceOfDelivery" class="assuranceDelivery">
-                                    <!-- <div class="form-check assuranceDeliveryRadio">
-                                        <input class="form-check-input" type="radio" name="Delivery Assurance Texts" id="radio1" value="" checked onclick="assuranceText()">
-                                        <label class="form-check-label" for="radio1">
-                                            Assurance Text Previous 1
-                                        </label>
-                                    </div> -->
-                                </div>
-                                <textarea class="form-control assuranceDeliveryInputText" placeholder="Input Text Area" id="assuranceDeliveryInputTextArea"></textarea>
-                                
-                                <hr>
-                                <label for="assuranceDelivery" class="col-12 col-form-label hookExampleTitle">HOOK EXAPMLE</label>
+        <div class="col-7">
+            <div class="row row-content align-items-center">
+                <div class="col-12">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header d-flex" role="tab" id="openingHead">
                                 <label class="switch">
-                                    <input type="checkbox" id="hookExampleToggle" onclick="hookExampleToggleFunction()" checked>
+                                    <input type="checkbox" id="openingToggle" checked>
                                     <span class="slider round"></span>
                                 </label>
-                                <textarea class="form-control hookExampleInputText" placeholder="Input Text Area" id="hookExampleInputTextArea"></textarea>
-                                <div class="hook" id="hookExampleId">
-                                    <div class="input-group mb-3 mt-3 searchHook"> 
-                                        <input type="text" class="form-control" id="searchHookId" onkeyup="searchHookFunction()">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#opening">
+                                    <a class="title">
+                                        Opening
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="collapse" id="opening" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <div class="col-6 row ml-2">
+                                            <label for="passcode" class="col-form-label passcodeText">Passcode: </label>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control textField" placeholder="Passcode" id="passcode">
+                                            </div>
                                         </div>
+                                        <div class="col-6 row">
+                                            <label for="clientName" class="col-form-label clientNameText">Client: </label>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control textField" placeholder="Client" id="clientName">
+                                            </div>
+                                        </div> 
                                     </div>
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="hookCheck">
-                                        <label class="form-check-label" for="hookCheck">
-                                          Possible Example 1
-                                        </label>
-                                    </div> -->
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header d-flex" role="tab" id="introHead">
-                            <label class="switch">
-                                <input type="checkbox" id="introToggle" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#intro">
-                                <a class="collapsed title">
-                                    Intro Self
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="collapse" id="intro" data-parent="#accordion">
-                            <div class="card-body">
-                                <label for="qualification" class="col-12 col-form-label qualificationTitle">Qualification & Professional Experience</label>
-                                <div id="qualification" class="qualificationRadio">
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="Qualification Text" id="qualificationRadio1" value="" checked>
-                                        <label class="form-check-label" for="qualificationRadio1">
-                                            Qualification Text Previous 1
-                                        </label>
-                                    </div> -->
-                                </div>
-                                <textarea class="form-control qualificationInputText" placeholder="Input Text Area" id="qualificationInputTextArea"></textarea>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header d-flex" role="tab" id="previousProjectsHead">
-                            <label class="switch">
-                                <input type="checkbox" id="projectToggle" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#previousProjects">
-                                <a class="title collpased">
-                                    Previous Projects
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="collapse" id="previousProjects" data-parent="#accordion">
-                            <div class="card-body">
-                                <label class="col-12 col-form-label previousProjectsTitle">
-                                    Here are some of the latest examples of my relevant projects:
-                                </label>
-                                <div class="previousProjectsCheckboxes" id="previousProjectsId">
-                                    <div class="input-group mb-3 mt-3 searchPrevProject"> 
-                                        <input type="text" class="form-control" id="searchProjectId" onkeyup="searchPrevProjectFunction()">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                    <hr>
+                                    <label for="problemUnderstanding" class="col-12 col-form-label problemUnderText">PROBLEM UNDERSTANDING</label>
+                                    <div class="form-group row">
+                                        <p class="col-7 descriptionText col-form-label">I have read through the project description and </p>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control textField" placeholder="" id="problemUnderstanding">
                                         </div>
+                                    </div> 
+                                    <hr>
+                                    <label for="assuranceDelivery" class="col-12 col-form-label assuranceDeliveryTitle">ASSURANCE OF DELIVERY</label>
+                                    <div id="assuranceOfDelivery" class="assuranceDelivery">
+                                        <!-- <div class="form-check assuranceDeliveryRadio">
+                                            <input class="form-check-input" type="radio" name="Delivery Assurance Texts" id="radio1" value="" checked onclick="assuranceText()">
+                                            <label class="form-check-label" for="radio1">
+                                                Assurance Text Previous 1
+                                            </label>
+                                        </div> -->
                                     </div>
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="prevProject1" name="Project Name">
-                                        <label class="form-check-label" for="prevProject1">
-                                          Possible Example 1
-                                        </label>
-                                    </div> -->
+                                    <textarea class="form-control assuranceDeliveryInputText" placeholder="Input Text Area" id="assuranceDeliveryInputTextArea"></textarea>
+                                    <hr>
+                                    <label for="assuranceDelivery" class="col-12 col-form-label hookExampleTitle">HOOK EXAPMLE</label>
+                                    <label class="switch">
+                                        <input type="checkbox" id="hookExampleToggle" onclick="hookExampleToggleFunction()" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <textarea class="form-control hookExampleInputText" placeholder="Input Text Area" id="hookExampleInputTextArea"></textarea>
+                                    <div class="hook" id="hookExampleId">
+                                        <div class="input-group mb-3 mt-3 searchHook"> 
+                                            <input type="text" class="form-control" id="searchHookId" onkeyup="searchHookFunction()">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="hookCheck">
+                                            <label class="form-check-label" for="hookCheck">
+                                            Possible Example 1
+                                            </label>
+                                        </div> -->
+                                    </div>    
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header d-flex" role="tab" id="whyusHead">
-                            <label class="switch">
-                                <input type="checkbox" id="whyUsToggle" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#whyus">
-                                <a class="title collpased">
-                                    Why Us?
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="collapse" id="whyus" data-parent="#accordion">
-                            <div class="card-body">
-                                <label class="col-12 col-form-label whyusTitle">
-                                    Why must you hire me?
+                        <div class="card">
+                            <div class="card-header d-flex" role="tab" id="introHead">
+                                <label class="switch">
+                                    <input type="checkbox" id="introToggle" checked>
+                                    <span class="slider round"></span>
                                 </label>
-                                <div class="whyusCheckboxes" id="whyUsId">
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="whyus1">
-                                        <label class="form-check-label" for="whyus1">
-                                          Reason 1
-                                        </label>
-                                    </div> -->
+                                <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#intro">
+                                    <a class="collapsed title">
+                                        Intro Self
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="collapse" id="intro" data-parent="#accordion">
+                                <div class="card-body">
+                                    <label for="qualification" class="col-12 col-form-label qualificationTitle">Qualification & Professional Experience</label>
+                                    <div id="qualification" class="qualificationRadio">
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Qualification Text" id="qualificationRadio1" value="" checked>
+                                            <label class="form-check-label" for="qualificationRadio1">
+                                                Qualification Text Previous 1
+                                            </label>
+                                        </div> -->
+                                    </div>
+                                    <textarea class="form-control qualificationInputText" placeholder="Input Text Area" id="qualificationInputTextArea"></textarea>  
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header d-flex" role="tab" id="previousProjectsHead">
+                                <label class="switch">
+                                    <input type="checkbox" id="projectToggle" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#previousProjects">
+                                    <a class="title collpased">
+                                        Previous Projects
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="collapse" id="previousProjects" data-parent="#accordion">
+                                <div class="card-body">
+                                    <label class="col-12 col-form-label previousProjectsTitle">
+                                        Here are some of the latest examples of my relevant projects:
+                                    </label>
+                                    <div class="previousProjectsCheckboxes" id="previousProjectsId">
+                                        <div class="input-group mb-3 mt-3 searchPrevProject"> 
+                                            <input type="text" class="form-control" id="searchProjectId" onkeyup="searchPrevProjectFunction()">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="prevProject1" name="Project Name">
+                                            <label class="form-check-label" for="prevProject1">
+                                            Possible Example 1
+                                            </label>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header d-flex" role="tab" id="whyusHead">
+                                <label class="switch">
+                                    <input type="checkbox" id="whyUsToggle" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#whyus">
+                                    <a class="title collpased">
+                                        Why Us?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="collapse" id="whyus" data-parent="#accordion">
+                                <div class="card-body">
+                                    <label class="col-12 col-form-label whyusTitle">
+                                        Why must you hire me?
+                                    </label>
+                                    <div class="whyusCheckboxes" id="whyUsId">
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="whyus1">
+                                            <label class="form-check-label" for="whyus1">
+                                            Reason 1
+                                            </label>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header d-flex" role="tab" id="closingHead">
+                                <label class="switch">
+                                    <input type="checkbox" id="closingToggle" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#closing">
+                                    <a class="title collpased">
+                                        Closing
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="collapse" id="closing" data-parent="#accordion">
+                                <div class="card-body">
+                                    <label for="closing" class="col-12 col-form-label closingTitle">View complete portfolio</label>
+                                    <div id="closingId" class="closingRadio">
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Closing Text" id="closingRadio1" value="" checked>
+                                            <label class="form-check-label" for="closingRadio1">
+                                                portfolio Text 1
+                                            </label>
+                                        </div> -->
+                                    </div>
+                                    <textarea class="form-control closingInputText" placeholder="Closing Statement" id="closingInputTextArea"></textarea>
+                                </div>
+                            </div>
+                        </div>                
                     </div>
-                    <div class="card">
-                        <div class="card-header d-flex" role="tab" id="closingHead">
-                            <label class="switch">
-                                <input type="checkbox" id="closingToggle" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <h4 class="mb-0 col-10 pointerHead" data-toggle="collapse" data-target="#closing">
-                                <a class="title collpased">
-                                    Closing
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="collapse" id="closing" data-parent="#accordion">
-                            <div class="card-body">
-                                <label for="closing" class="col-12 col-form-label closingTitle">View complete portfolio</label>
-                                <div id="closingId" class="closingRadio">
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="Closing Text" id="closingRadio1" value="" checked>
-                                        <label class="form-check-label" for="closingRadio1">
-                                            portfolio Text 1
-                                        </label>
-                                    </div> -->
-                                </div>
-                                <textarea class="form-control closingInputText" placeholder="Closing Statement" id="closingInputTextArea"></textarea>
-                            </div>
-                        </div>
-                    </div>                
                 </div>
             </div>
-       </div>
-    </div>
-    <div class="">
-        <button onclick="updateFunction();" type="button" class="btn updateButton" id="update">
-            Update
-        </button>
-    </div>
-    <div class="col-4">
-        <form>
-            <div class="form-group d-flex">
-                <label for="dealValue" class="col-3 col-form-label dealText">Deal Value:</label>
-                <div class="">
-                    <input type="text" class="form-control textField" id="dealValue" name="Deal Value">
+        </div>
+        <div class="">
+            <button onclick="updateFunction();" type="button" class="btn updateButton" id="update">
+                Update
+            </button>
+        </div>
+        <div class="col-4">
+            <form>
+                <div class="form-group d-flex">
+                    <label for="dealValue" class="col-3 col-form-label dealText">Deal Value:</label>
+                    <div class="">
+                        <input type="text" class="form-control textField" id="dealValue" name="Deal Value">
+                    </div>
+                    <select class="form-control col-3 pitchOption" id="exampleFormControlSelect1">
+                        <!-- <option>1</option> -->
+                    </select> 
+                    <button type="button" class="btn btn-primary" id="saveButton" onclick="submitFunction(); highlight();">Save</button>  
                 </div>
-                <select class="form-control col-3 pitchOption" id="exampleFormControlSelect1">
-                    <!-- <option>1</option> -->
-                </select> 
-                <button type="button" class="btn btn-primary" id="saveButton" onclick="submitFunction(); highlight();">Save</button>  
-            </div>
-            <div class="form-group row">
-                
-              </div>
-            <textarea class="form-control outputTextArea" placeholder="Output Text Area" id="outputTextAreaId" name="Pitch Content"></textarea>
-        </form>  
-    </div>
+                <textarea class="form-control outputTextArea" placeholder="Output Text Area" id="outputTextAreaId" name="Pitch Content"></textarea>
+            </form>  
+        </div>
     </div> 
-    <!-- end  -->
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
