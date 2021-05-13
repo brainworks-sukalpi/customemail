@@ -681,7 +681,7 @@ function highlight() {
     obj.style.backgroundColor = "#f1f1f1";
     obj.style.borderColor = "black";
     obj.style.color = "black";
-    obj.innerHTML = "Saved";
+    obj.innerHTML = "Saved <b>&#10003;</b>";
     setTimeout(function() {
         obj.style.backgroundColor = "#007bff";
         obj.innerHTML = "Save";
