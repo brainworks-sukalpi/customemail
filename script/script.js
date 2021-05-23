@@ -699,32 +699,31 @@ function submitFunction() {
 
     var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
     request.then(function(response) {
-    console.log(response.result);
-    obj = document.getElementById("saveButton");
-    obj.style.backgroundColor = "#f1f1f1";
-    obj.style.borderColor = "black";
-    obj.style.color = "black";
-    obj.innerHTML = "Saved <b>&#10003;</b>";
-    setTimeout(function() {
-        obj.style.backgroundColor = "#007bff";
-        obj.innerHTML = "Save";
-        obj.style.color = "white";
-    }, 4000);
+        console.log(response.result);
+        obj = document.getElementById("saveButton");
+        obj.style.backgroundColor = "#f1f1f1";
+        obj.style.borderColor = "black";
+        obj.style.color = "black";
+        obj.innerHTML = "Saved <b>&#10003;</b>";
+        setTimeout(function() {
+            obj.style.backgroundColor = "#007bff";
+            obj.innerHTML = "Save";
+            obj.style.color = "white";
+        }, 4000);
     }, function(reason) {
-    console.error('error: ' + reason.result.error.message);
-    obj = document.getElementById("saveButton");
-    obj.style.backgroundColor = "#f1f1f1";
-    obj.style.borderColor = "black";
-    obj.style.color = "black";
-    obj.innerHTML = "Error!";
-    setTimeout(function() {
-        obj.style.backgroundColor = "#007bff";
-        obj.innerHTML = "Save";
-        obj.style.color = "white";
-    }, 4000);
+        console.error('error: ' + reason.result.error.message);
+        obj = document.getElementById("saveButton");
+        obj.style.backgroundColor = "#f1f1f1";
+        obj.style.borderColor = "black";
+        obj.style.color = "black";
+        obj.innerHTML = "Error!";
+        setTimeout(function() {
+            obj.style.backgroundColor = "#007bff";
+            obj.innerHTML = "Save";
+            obj.style.color = "white";
+        }, 4000);
     });
 }
-
 //Save button is clicked, its state is changed for 4 seconds for user conformation
 // function highlight() {
 //     obj = document.getElementById("saveButton");
