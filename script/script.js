@@ -292,6 +292,8 @@ function makeApiCallClosing() {
         }
     }
     closingStatement = arr[0][0];
+    var textarea = document.getElementById("closingInputTextArea");
+    textarea.value = closingStatement;
     }, function(reason) {
     console.error('error: ' + reason.result.error.message);
     });
@@ -335,15 +337,6 @@ function assuranceText(id) {
 
     textarea.value = text.value;
 }
-
-// function hookText(id) {
-//     var textarea = document.getElementById("hookExampleInputTextArea");
-//     var text = document.getElementById(id);
-
-//     if(text.checked == true)
-//         textarea.value += text.value + " ";
-// }
-
 
 //When clicked on intro self text radio buttons, it immediately gets diplayed in the text box
 function introSelfText(id) {
