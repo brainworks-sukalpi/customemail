@@ -717,16 +717,28 @@ function submitFunction() {
         }, 4000);
     });
 }
-//Save button is clicked, its state is changed for 4 seconds for user conformation
-// function highlight() {
-//     obj = document.getElementById("saveButton");
-//     obj.style.backgroundColor = "#f1f1f1";
-//     obj.style.borderColor = "black";
-//     obj.style.color = "black";
-//     obj.innerHTML = "Saved <b>&#10003;</b>";
-//     setTimeout(function() {
-//         obj.style.backgroundColor = "#007bff";
-//         obj.innerHTML = "Save";
-//         obj.style.color = "white";
-//     }, 4000);
-// }
+
+function expansionFunction() {
+    text = document.getElementById("outputBox");
+    button = document.getElementById("expandButton");
+    deal = document.getElementById("dealValueText");
+
+    if(text.style.position === "absolute") {
+        text.style.backgroundColor = "white";
+        text.style.position = "relative";
+        text.style.zIndex = "10";
+        text.classList.remove("col-12");
+        button.innerHTML = `<i class="bi bi-arrow-left"></i>`;
+        deal.classList.add("col-3");
+        deal.classList.remove("col-1");
+    } else {
+        text.style.backgroundColor = "white";
+        text.style.position = "absolute";
+        text.style.zIndex = "10";
+        text.classList.add("col-12");
+        button.innerHTML = `<i class="bi bi-arrow-right"></i>`;
+        deal.classList.remove("col-3");
+        deal.classList.add("col-1");
+    }
+    
+}

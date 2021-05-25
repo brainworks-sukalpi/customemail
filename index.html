@@ -15,7 +15,7 @@
     <title>Sukalpi Brainworks.® | Custom Email</title>
 </head>
 <body onload="handleClientLoad()">
-    <div class="row mt-3">
+    <div class="row homeNav">
         <div class="col-9">
             <h2 class="title-head" id="">Sukalpi Brainworks<strong class="dot">.</strong><sup>®</sup>  | Custom Email</h2>
         </div>
@@ -24,8 +24,8 @@
             <button class="btn signoutButton" id="signout-button" onclick="handleSignOutClick()">Sign out</button>
         </div>
     </div>
-    <hr>
-    <div class="d-flex"> 
+    <!-- <hr> -->
+    <div class="d-flex mt-4"> 
         <div class="col-7">
             <div class="row row-content align-items-center">
                 <div class="col-12">
@@ -226,10 +226,10 @@
                 Update
             </button>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="outputBox">
             <form>
                 <div class="form-group d-flex">
-                    <label for="dealValue" class="col-3 col-form-label dealText">Deal Value:</label>
+                    <label for="dealValue" class="col-3 col-form-label dealText" id="dealValueText">Deal Value:</label>
                     <div class="">
                         <input type="text" class="form-control textField" id="dealValue" name="Deal Value">
                     </div>
@@ -238,6 +238,7 @@
                     </select> 
                     <button type="button" class="btn btn-primary" id="saveButton" onclick="submitFunction(); highlight();">Save</button>  
                 </div>
+                <button type="button" class="btn expansionButton" id="expandButton" onclick="expansionFunction();"><i class="bi bi-arrow-left"></i></button>
                 <textarea class="form-control outputTextArea" placeholder="Output Text Area" id="outputTextAreaId" name="Pitch Content"></textarea>
             </form>  
         </div>
